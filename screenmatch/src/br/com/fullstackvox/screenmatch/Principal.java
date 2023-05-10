@@ -1,6 +1,8 @@
 package br.com.fullstackvox.screenmatch;
 
 import br.com.fullstackvox.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.fullstackvox.screenmatch.calculos.FiltroRecomendacao;
+import br.com.fullstackvox.screenmatch.modelos.Episodio;
 import br.com.fullstackvox.screenmatch.modelos.Filme;
 import br.com.fullstackvox.screenmatch.modelos.Serie;
 
@@ -32,6 +34,14 @@ public class Principal {
 		lost.setEpisodiosPorTemporadas(10);
 		lost.setMinutosPorEpisodios(50);
 		
+		Serie ultraman = new Serie();
+		ultraman.setNome("Ultraman");
+		ultraman.setAnoLancamento(1966);
+		ultraman.setDuracaoEmMinutos(25);
+		ultraman.setTempodradas(1);
+		ultraman.setEpisodiosPorTemporadas(39);
+		ultraman.setMinutosPorEpisodios(25);
+		
 		lost.exibeFichaTecnica();
 		
 		System.out.println("tempo para maratonar: " + lost.getDuracaoEmMinutos());
@@ -47,6 +57,17 @@ public class Principal {
 		calculadora.inclui(outroFilme);
 		calculadora.inclui(lost);
 		System.out.println("Tempo total calculado: " + calculadora.getTempoTotal());
+		
+		FiltroRecomendacao filtro = new FiltroRecomendacao();
+		filtro.filtra(meuFilme);
+		
+		Episodio episodio = new Episodio();
+		episodio.setNumero(1);
+		episodio.setSerie(ultraman);
+		episodio.setTotalVisualizacoes(2586);
+		
+		filtro.filtra(episodio);
+		
 		
 		
 				
