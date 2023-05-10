@@ -1,13 +1,15 @@
 package screenmatch;
 
+import br.com.fullstackvox.screenmatch.modelos.Filme;
+
 public class Principal {
 
 	public static void main(String[] args) {
 		
 		Filme meuFilme = new Filme();
-		meuFilme.nome = "O poderoso chefão";
-		meuFilme.anoLancamento = 1972;
-		meuFilme.duracaoEmMinuto = 120;
+		meuFilme.setNome("O poderoso chefão");
+		meuFilme.setAnoLancamento(1972);
+		meuFilme.setDuracaoEmMinuto(120);
 		
 		meuFilme.exibeFichaTecnica();
 				
@@ -15,10 +17,10 @@ public class Principal {
 		meuFilme.avalia(5);
 		meuFilme.avalia(10);
 		
-		System.out.println("Soma das Avaliaçãoes: " + meuFilme.somaDasAvaliacoes);
-		System.out.println("Total das Avaliaçãoes: " + meuFilme.totalAvaliacoes);
+		System.out.println("Soma das Avaliaçãoes: " + meuFilme.getSomaDasAvaliacoes());
+		System.out.println("Total das Avaliaçãoes: " + meuFilme.getTotalAvaliacoes());
 		System.out.println("Média das Avaliações: " + meuFilme.pegaMedia());
-		
+				
 		
 
 		
